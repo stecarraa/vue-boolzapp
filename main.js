@@ -5,7 +5,7 @@ Replica della grafica, con l'aggiunta possibilità di avere messaggi scritti dal
 Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, visualizzare nome e immagine di ogni contatto presente nella struttura dati consegnata. */
 
 const app = new Vue ({
-el:'root',
+el:'#root',
 
     data : {
         activeUser : 0,
