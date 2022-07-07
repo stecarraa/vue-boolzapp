@@ -1,0 +1,9 @@
+.ms-bg-green{
+    background-color: rgb(17, 134, 117) ;
+    min-height: 15vh;
+}
+
+.ms-bg-grey{
+    background-color: rgb(212, 211, 200);
+    min-height: 85vh;
+}
