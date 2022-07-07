@@ -10,69 +10,104 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="style.css">
 
-    
+
 
     <title>Boolzapp</title>
 </head>
 
 <body>
 
-    <div class="container-fluid position-relative">
-        <div class="row">
-            <div class="col-12 ms-bg-green">Colore verde</div>
-            <div class="col-12 ms-bg-grey">colore grigetto</div>
-        </div>
-    
+    <div id="root">
+        <div class="container-fluid position-relative">
+            <div class="row">
+                <div class="col-12 ms-bg-green">Colore verde</div>
+                <div class="col-12 ms-bg-grey">colore grigetto</div>
+            </div>
 
-    <div class="ms-container position-absolute top-50 start-50 translate-middle d-flex">
-<!-- container di sinistra con informazioni contatti ecc -->
-        <div class="container w-25">
-            <div class="row">
-                <div class="col-12 d-flex align-items-center ms-container-user"> 
-                   <img src="./img/avatar_io.jpg" class="ms-bell" alt="">Sofia + icone</div>
-<!-- sezione attiva/disattiva notifiche -->
-                <div class="col-12 d-flex ms-container-notification align-items-center">
-                    <div class="ms-bell position-relative">
-                    <i class="fa-solid fa-bell-slash position-absolute top-50 start-50 translate-middle"></i>
-                    </div> 
-                    attiva/disattiva notifiche
-                </div>
-                <div class="col-12">barra di ricerca chat</div>
-                <div class="col-12"></div>
-            </div>
-        </div>
-<!-- container di destra con la chat -->
-        <div class="container w-75">
-            <div class="row">
-                <div class="col-12 d-flex align-items-center">
-                    <div class="col-6">
-                     Michele <br> ultimo accesso alle 12:00
+
+            <div class="ms-container position-absolute top-50 start-50 translate-middle d-flex">
+                <!-- container di sinistra con informazioni contatti ecc -->
+                <div class="container w-40">
+                    <div class="row">
+                        <div class="col-12 d-flex align-items-center ms-container-user">
+                            <div class="col-6">
+                                <img src="./img/avatar_io.jpg" class="ms-bell" alt=""> Sofia
+                            </div>
+                            <div class="col-6 text-end">
+                                <i class="fa-solid fa-circle-notch"></i>
+                                <i class="fa-solid fa-message"></i>
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </div>
+                        </div>
+                        <!-- sezione attiva/disattiva notifiche -->
+                        <div class="col-12 d-flex ms-container-notification align-items-center">
+                            <div class="ms-bell position-relative">
+                                <i
+                                    class="fa-solid fa-bell-slash position-absolute top-50 start-50 translate-middle"></i>
+                            </div>
+                            attiva/disattiva notifiche
+                        </div>
+                        <div class="col-12">
+                            <div class="input-group rounded p-1">
+
+                                <span class="input-group-text border-0" id="search-addon">
+                                    <i class="fas fa-search"></i>
+                                </span>
+                                <input type="search" class="form-control rounded"
+                                    placeholder="Cerca o inizia nuova chat" aria-label="Search"
+                                    aria-describedby="search-addon" />
+
+                            </div>
+                        </div>
+                        <!-- Sezione ultimi contatti -->
+                        <div class="col-12">
+                            <ul>
+                                <li v-for="(contact,index) in contacts">
+                                    <div class="d-flex">
+                                        <img class="ms-bell" :src="`./img/avatar${contact.avatar}.jpg`" alt="">
+                                        <div>
+                                            <h3>{{contact.name}}</h3>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="col-6 text-end">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                        <i class="fa-solid fa-paperclip"></i>
-                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+                <!-- container di destra con la chat -->
+                <div class="container w-60">
+                    <div class="row">
+                        <div class="col-12 d-flex align-items-center">
+                            <div class="col-6">
+                                Michele <br> ultimo accesso alle 12:00
+                            </div>
+                            <div class="col-6 text-end">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <i class="fa-solid fa-paperclip"></i>
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </div>
+                        </div>
+                        <div class="col-12 ms-chat-section">mega sezione dove viene displayata la chatt</div>
+                        <div class="col-12">qua invece scrivi tu</div>
                     </div>
                 </div>
-                <div class="col-12 ms-chat-section">mega sezione dove viene displayata la chatt</div>
-                <div class="col-12">qua invece scrivi tu</div>
             </div>
+
         </div>
     </div>
 
-</div>
 
 
 
 
-
-     <!-- development version, includes helpful console warnings -->
-     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script type="text/javascript" src="main.js"></script>
 
 </body>
-
