@@ -14,3 +14,24 @@
     height: 90vh;
     background-color: aliceblue;
 }
+
+.ms-container-notification{
+    background-color: rgb(126, 209, 251);
+    height: 10vh;
+}
+.ms-container-user{
+    background-color: rgb(229, 229, 229);
+    height: 10vh;
+}
+
+.ms-bell{
+    height: 60px;
+    width: 60px;
+    object-fit: contain;
+    border-radius: 50%;
+    background-color: white;
+}
+
+
+  
+  

@@ -10,6 +10,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="stylesheet" href="style.css">
 
     
@@ -30,8 +32,15 @@
 <!-- container di sinistra con informazioni contatti ecc -->
         <div class="container w-25">
             <div class="row">
-                <div class="col-12"> immagine profilo + nome + icone</div>
-                <div class="col-12 bg-info">attiva/disattiva notifiche</div>
+                <div class="col-12 d-flex align-items-center ms-container-user"> 
+                   <img src="./img/avatar_io.jpg" class="ms-bell" alt="">Sofia + icone</div>
+<!-- sezione attiva/disattiva notifiche -->
+                <div class="col-12 d-flex ms-container-notification align-items-center">
+                    <div class="ms-bell position-relative">
+                    <i class="fa-solid fa-bell-slash position-absolute top-50 start-50 translate-middle"></i>
+                    </div> 
+                    attiva/disattiva notifiche
+                </div>
                 <div class="col-12">barra di ricerca chat</div>
                 <div class="col-12"></div>
             </div>
@@ -39,7 +48,16 @@
 <!-- container di destra con la chat -->
         <div class="container w-75">
             <div class="row">
-                <div class="col-12">nome persona chat aperta</div>
+                <div class="col-12 d-flex align-items-center">
+                    <div class="col-6">
+                     Michele <br> ultimo accesso alle 12:00
+                    </div>
+                    <div class="col-6 text-end">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <i class="fa-solid fa-paperclip"></i>
+                        <i class="fa-solid fa-ellipsis-vertical"></i>
+                    </div>
+                </div>
                 <div class="col-12">mega sezione dove viene displayata la chatt</div>
                 <div class="col-12">qua invece scrivi tu</div>
             </div>
