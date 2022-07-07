@@ -85,9 +85,15 @@
                 <!-- container di destra con la chat -->
                 <div class="container w-60">
                     <div class="row">
-                        <div class="col-12 d-flex align-items-center">
+                        <div class="col-12 d-flex align-items-center ms-container-chat-user">
                             <div class="col-6">
-                                Michele <br> ultimo accesso alle 12:00
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <img class="ms-bell" src="./img/avatar_1.jpg" alt="">
+                                    <div>
+                                        <div class="fs-5 fw-semibold">Michele</div>
+                                        <div class="fw-lighter">Ultimo acccesso effettuato oggi alle 12:00</div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="col-6 text-end">
                                 <i class="fa-solid fa-magnifying-glass"></i>
@@ -96,7 +102,9 @@
                             </div>
                         </div>
                         <div class="col-12 ms-chat-section">mega sezione dove viene displayata la chatt</div>
-                        <div class="col-12">qua invece scrivi tu</div>
+                        <div class="col-12 ms-message-section d-flex align-items-center justify-content-between">
+                            <i class="fa-regular fa-face-smile"></i> <input class="w-75" type="text" placeholder="Scrivi un messaggio"><i class="fa-solid fa-microphone"></i>
+                        </div>
                     </div>
                 </div>
             </div>

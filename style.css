@@ -11,7 +11,7 @@
 .ms-container{
     margin: 0 auto;
     width:80%;
-    height: 90vh;
+    height: 95vh;
     background-color: aliceblue;
 }
 
@@ -25,7 +25,7 @@
 }
 
 .ms-contacts-container{
-    height: 60vh;
+    height: 65vh;
     overflow-y: auto;
 }
 
@@ -37,11 +37,17 @@
     background-color: white;
 }
 
-
+.ms-container-chat-user{
+    height: 10vh;
+}
 .ms-chat-section{
-    height: 80vh;
+    height: 75vh;
     background-size: cover;
     background-image:url('https://prodigits.co.uk/thumbs/wallpapers/p2ls/abstract/49/9b8d564d12408006.jpg');
+}
+.ms-message-section{
+    height: 10vh;
+    background-color: rgb(240,234,229);
 }
 
   
