@@ -1,3 +1,8 @@
+.clearfix{
+    display: table;
+    content: "";
+    clear:both
+}
 .ms-bg-green{
     background-color: rgb(17, 134, 117) ;
     min-height: 15vh;
@@ -58,3 +63,23 @@
   .w-60{
     width: 60%;
   }
+
+  .message{
+    width: 100%;
+}
+
+  .sent-message{
+    background-color: #d5f9ba;
+    border-radius:10px ;
+    padding: 5px;
+    margin: 10px;
+    float: right;
+}
+
+.received-message{
+    background-color: #fff;
+    border-radius:10px ;
+    padding: 5px;
+    margin: 10px;
+    float: left;
+}
