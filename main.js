@@ -199,8 +199,17 @@ const app = new Vue({
             message:"ok",
             status:"received",
         }
-        this.contacts[this.activeUser].messages.push(newMessageReplay);
-    }
+        // this.contacts[this.activeUser].messages.push(newMessageReplay);
+
+        setTimeout(()=>{
+            this.contacts[this.activeUser].messages.push(newMessageReplay)
+        },1000);
+    },
+
+   
+   
+    
+
 
   },
 
