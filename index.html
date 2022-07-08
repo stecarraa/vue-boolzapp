@@ -68,7 +68,7 @@
                         <!-- Sezione ultimi contatti -->
                         <div class="col-12 ms-contacts-container">
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item list-group-item-action" v-for="(contact,index) in contacts">
+                                <li class="list-group-item list-group-item-action" v-for="(contact,index) in contacts" @click="activeProfile(activeUser)">
                                     <div class="d-flex align-items-center justify-content-between">
                                         <img class="ms-bell" :src="`./img/avatar${contact.avatar}.jpg`" alt="">
                                         <div>
@@ -104,12 +104,14 @@
                         <!-- sezione della chat con messaggi inviati e ricevuti -->
                         <div class="col-12 ms-chat-section">
 
-                            <div class="message clearfix">
-                                <div :class="(messages.status=='sent') ? 'sent-message' : 'received-message'" v-for="(text,index) in contacts[active].messages" >
-                                   <span>{{text.message}}</span> 
-                                    <div class="">{{messages.date}}</div>
+
+                                <div class="message clearfix">
+                                    <div :class="(message.status=='sent') ? 'sent-message col-6' : 'received-message col-6'" 
+                                    v-for="(message,index) in contacts[activeUser].messages" >
+                                       <div>{{message.message}}</div> 
+                                        <div class="float-end fs-6">{{message.date}}</div>
+                                    </div>
                                 </div>
-                            </div>
                         </div>
 
                         <div class="col-12 ms-message-section d-flex align-items-center justify-content-between">

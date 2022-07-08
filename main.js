@@ -174,5 +174,9 @@ const app = new Vue({
     ],
   },
 
-  methods: {},
+  methods: {
+    activeProfile:function(index){
+        this.activeUser=index;
+    },
+  },
 });
