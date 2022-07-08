@@ -68,7 +68,7 @@
                         <!-- Sezione ultimi contatti -->
                         <div class="col-12 ms-contacts-container">
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item list-group-item-action" v-for="(contact,index) in contacts" @click="activeProfile(activeUser)">
+                                <li class="list-group-item list-group-item-action" v-for="(contact,index) in contacts" @click="activeProfile(index)">
                                     <div class="d-flex align-items-center justify-content-between">
                                         <img class="ms-bell" :src="`./img/avatar${contact.avatar}.jpg`" alt="">
                                         <div>
