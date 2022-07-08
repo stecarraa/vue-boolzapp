@@ -104,13 +104,12 @@
                         <!-- sezione della chat con messaggi inviati e ricevuti -->
                         <div class="col-12 ms-chat-section">
 
-                            <div class="col-6 sent-message">
-                                <div class="message ">ricordati di portare fuori il cane</div>
-                               </div>
-    
-                                <div class="col-6 received-message">
-                                    <div class="message ">quale cane?</div>
+                            <div class="message clearfix">
+                                <div :class="(messages.status=='sent') ? 'sent-message' : 'received-message'" v-for="(text,index) in contacts[active].messages" >
+                                   <span>{{text.message}}</span> 
+                                    <div class="">{{messages.date}}</div>
                                 </div>
+                            </div>
                         </div>
 
                         <div class="col-12 ms-message-section d-flex align-items-center justify-content-between">

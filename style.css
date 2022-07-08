@@ -1,40 +1,43 @@
-.clearfix{
+.clearfix {
     display: table;
     content: "";
-    clear:both
+    clear: both
 }
-.ms-bg-green{
-    background-color: rgb(17, 134, 117) ;
+
+.ms-bg-green {
+    background-color: rgb(17, 134, 117);
     min-height: 15vh;
 }
 
-.ms-bg-grey{
+.ms-bg-grey {
     background-color: rgb(212, 211, 200);
     min-height: 85vh;
 }
 
-.ms-container{
+.ms-container {
     margin: 0 auto;
-    width:80%;
+    min-width: 850px;
+    width: 80%;
     height: 95vh;
     background-color: aliceblue;
 }
 
-.ms-container-notification{
+.ms-container-notification {
     background-color: rgb(126, 209, 251);
     height: 10vh;
 }
-.ms-container-user{
+
+.ms-container-user {
     background-color: rgb(229, 229, 229);
     height: 10vh;
 }
 
-.ms-contacts-container{
+.ms-contacts-container {
     height: 65vh;
     overflow-y: auto;
 }
 
-.ms-bell{
+.ms-bell {
     height: 50px;
     width: 50px;
     object-fit: contain;
@@ -42,43 +45,45 @@
     background-color: white;
 }
 
-.ms-container-chat-user{
+.ms-container-chat-user {
     height: 10vh;
 }
-.ms-chat-section{
+
+.ms-chat-section {
     height: 75vh;
     background-size: cover;
-    background-image:url('https://prodigits.co.uk/thumbs/wallpapers/p2ls/abstract/49/9b8d564d12408006.jpg');
+    background-image: url('https://prodigits.co.uk/thumbs/wallpapers/p2ls/abstract/49/9b8d564d12408006.jpg');
 }
-.ms-message-section{
+
+.ms-message-section {
     height: 10vh;
-    background-color: rgb(240,234,229);
+    background-color: rgb(240, 234, 229);
 }
 
-  
-  .w-40{
+
+.w-40 {
     width: 40%;
-  }
+}
 
-  .w-60{
+.w-60 {
     width: 60%;
-  }
+}
 
-  .message{
+.message {
     width: 100%;
 }
 
-  .sent-message{
+.sent-message {
     background-color: #d5f9ba;
-    border-radius:10px ;
+    border-radius: 10px;
     padding: 5px;
     margin: 10px;
     float: right;
 }
 
-.received-message{
+.received-message {
     background-color: #fff;
-    border-radius:10px ;
+    border-radius: 10px;
     padding: 5px;
     margin: 10px;
     float: left;
