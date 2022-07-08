@@ -193,7 +193,14 @@ const app = new Vue({
             this.contacts[this.activeUser].messages.push(newMessageState);
             this.newMessage='';
             
-        }}
+        }
+        const newMessageReplay={
+            date:"today",
+            message:"ok",
+            status:"received",
+        }
+        this.contacts[this.activeUser].messages.push(newMessageReplay);
+    }
 
   },
 
