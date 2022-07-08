@@ -8,6 +8,7 @@ const app = new Vue({
   el: "#root",
 
   data: {
+    newMessage:"",
     activeUser: 0,
     contacts: [
       {
@@ -178,5 +179,23 @@ const app = new Vue({
     activeProfile:function(index){
         this.activeUser=index;
     },
+
+    userNewMessage : function(){
+            
+        if(this.newMessage.trim().length>0){
+            
+    
+            const newMessageState={
+                date:"today",
+                message:this.newMessage.trim(),
+                status: 'sent',
+            }
+            this.contacts[this.activeUser].messages.push(newMessageState);
+            this.newMessage='';
+            
+        }}
+
   },
+
+  
 });
