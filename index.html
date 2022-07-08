@@ -68,14 +68,16 @@
                         <!-- Sezione ultimi contatti -->
                         <div class="col-12 ms-contacts-container">
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item list-group-item-action" v-for="(contact,index) in contacts" @click="activeProfile(index)">
+                                <li class="list-group-item list-group-item-action" v-for="(contact,index) in contacts"
+                                    @click="activeProfile(index)">
                                     <div class="d-flex align-items-center justify-content-between">
                                         <img class="ms-bell" :src="`./img/avatar${contact.avatar}.jpg`" alt="">
-                                        <div>
+                                        <div class="flex-auto">
                                             <div class="fs-5 fw-semibold">{{contact.name}}</div>
-                                            <div class="fw-lighter">Ultimo messaggio inviato</div>
+                                            <div class="fw-lighter">
+                                                {{contact.messages[contact.messages.length - 1].message}}</div>
                                         </div>
-                                        <div class="fw-lighter">12.00</div>
+                                        <div class="fw-lighter">{{contact.messages[contact.messages.length - 1].date}}</div>
                                     </div>
                                 </li>
                             </ul>
@@ -88,10 +90,10 @@
                         <div class="col-12 d-flex align-items-center ms-container-chat-user">
                             <div class="col-6">
                                 <div class="d-flex align-items-center justify-content-between">
-                                    <img class="ms-bell" src="./img/avatar_1.jpg" alt="">
+                                    <img class="ms-bell" :src="`./img/avatar${contacts[activeUser].avatar}.jpg`" alt="">
                                     <div>
-                                        <div class="fs-5 fw-semibold">Michele</div>
-                                        <div class="fw-lighter">Ultimo acccesso effettuato oggi alle 12:00</div>
+                                        <div class="fs-5 fw-semibold">{{contacts[activeUser].name}}</div>
+                                        <div class="fw-lighter">{{contacts[activeUser].messages[contacts[activeUser].messages.length - 1].date}}</div>
                                     </div>
                                 </div>
                             </div>
@@ -105,13 +107,13 @@
                         <div class="col-12 ms-chat-section">
 
 
-                                <div class="message clearfix">
-                                    <div :class="(message.status=='sent') ? 'sent-message col-6' : 'received-message col-6'" 
-                                    v-for="(message,index) in contacts[activeUser].messages" >
-                                       <div>{{message.message}}</div> 
-                                        <div class="float-end fs-6">{{message.date}}</div>
-                                    </div>
+                            <div class="message clearfix">
+                                <div :class="(message.status=='sent') ? 'sent-message col-6' : 'received-message col-6'"
+                                    v-for="(message,index) in contacts[activeUser].messages">
+                                    <div>{{message.message}}</div>
+                                    <div class="float-end fs-6">{{message.date}}</div>
                                 </div>
+                            </div>
                         </div>
 
                         <div class="col-12 ms-message-section d-flex align-items-center justify-content-between">

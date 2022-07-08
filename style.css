@@ -3,6 +3,9 @@
     content: "";
     clear: both
 }
+.flex-auto{
+    flex: auto;
+}
 
 .ms-bg-green {
     background-color: rgb(17, 134, 117);
