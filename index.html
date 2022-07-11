@@ -116,7 +116,7 @@
 
                             <div class="message clearfix">
                                 <div :class="(message.status=='sent') ? 'sent-message col-6' : 'received-message col-6'"
-                                    v-for="(message,index) in contacts[activeUser].messages">
+                                v-if="message.status != 'deleted'" v-for="(message,index) in contacts[activeUser].messages">
                                     <div>{{message.message}}</div>
                                     <div class="float-end date-time-text d-flex align-items-center">{{message.date}} <div>
                                         <div class="dropdown">
@@ -125,7 +125,7 @@
                                             </button>
                                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                                 <li><a class="dropdown-item" href="#">Message info</a></li>
-                                                <li><a class="dropdown-item" href="#">Delete message</a></li>
+                                                <li><a  @click="removeMessage(index)" class="dropdown-item" href="#">Delete message</a></li>
                                             </ul>
                                         </div>
                                     </div></div>

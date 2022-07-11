@@ -217,8 +217,12 @@ const app = new Vue({
       });
   },
 
+  removeMessage(index) {
+    this.contacts[this.activeUser].messages[index].status = "deleted";
+  },
+
    
-   
+  
     
 
 
