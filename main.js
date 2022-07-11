@@ -218,7 +218,9 @@ const app = new Vue({
   },
 
   removeMessage(index) {
-    this.contacts[this.activeUser].messages[index].status = "deleted";
+    // this.contacts[this.activeUser].messages[index].status = "deleted";
+    this.contacts[this.activeUser].messages.splice(index, 1);
+
   },
 
    

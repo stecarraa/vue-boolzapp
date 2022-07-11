@@ -71,13 +71,14 @@
                         <div class="col-12 ms-contacts-container">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item list-group-item-action" v-for="(contact,index) in contacts"
-                                    @click="activeProfile(index)" v-if="contact.visible == true">
+                                    @click="activeProfile(index)" v-if= "contact.messages[contact.messages.length - 1] != 0">
                                     <div class="d-flex align-items-center justify-content-between">
                                         <img class="ms-bell" :src="`./img/avatar${contact.avatar}.jpg`" alt="">
                                         <div class="flex-auto">
                                             <div class="fs-5 fw-semibold">{{contact.name}}</div>
                                             <div class="fw-lighter">
                                                 {{contact.messages[contact.messages.length - 1].message}}</div>
+                                                <!-- <div v-if= "contact.messages[contact.messages.length - 1] === 0 ">No more messages</div> -->
                                         </div>
                                         <div class="fw-lighter date-time-text">
                                             {{contact.messages[contact.messages.length - 1].date}}
