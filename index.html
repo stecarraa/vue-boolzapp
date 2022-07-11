@@ -26,8 +26,8 @@
     <div id="root">
         <div class="container-fluid position-relative">
             <div class="row">
-                <div class="col-12 ms-bg-green">Colore verde</div>
-                <div class="col-12 ms-bg-grey">colore grigetto</div>
+                <div class="col-12 ms-bg-green"></div>
+                <div class="col-12 ms-bg-grey"></div>
             </div>
 
 
@@ -48,11 +48,11 @@
 
                         <!-- sezione attiva/disattiva notifiche -->
                         <div class="col-12 d-flex ms-container-notification align-items-center">
-                            <div class="ms-bell position-relative">
+                            <div class="ms-bell position-relative ">
                                 <i
                                     class="fa-solid fa-bell-slash position-absolute top-50 start-50 translate-middle"></i>
                             </div>
-                            attiva/disattiva notifiche
+                            <span class="m-3">Attiva / Disattiva notifiche</span>
                         </div>
 
                         <!-- sezione barra ricerca -->
@@ -79,7 +79,7 @@
                                             <div class="fw-lighter">
                                                 {{contact.messages[contact.messages.length - 1].message}}</div>
                                         </div>
-                                        <div class="fw-lighter">{{contact.messages[contact.messages.length - 1].date}}
+                                        <div class="fw-lighter date-time-text">{{contact.messages[contact.messages.length - 1].date}}
                                         </div>
                                     </div>
                                 </li>
@@ -97,7 +97,7 @@
                                     <img class="ms-bell" :src="`./img/avatar${contacts[activeUser].avatar}.jpg`" alt="">
                                     <div>
                                         <div class="fs-5 fw-semibold">{{contacts[activeUser].name}}</div>
-                                        <div class="fw-lighter">
+                                        <div class="date-time-text fw-lighter">
                                             {{contacts[activeUser].messages[contacts[activeUser].messages.length -
                                             1].date}}</div>
                                     </div>
@@ -117,7 +117,7 @@
                                 <div :class="(message.status=='sent') ? 'sent-message col-6' : 'received-message col-6'"
                                     v-for="(message,index) in contacts[activeUser].messages">
                                     <div>{{message.message}}</div>
-                                    <div class="float-end fs-6">{{message.date}}</div>
+                                    <div class="float-end date-time-text">{{message.date}}</div>
                                 </div>
                             </div>
                         </div>

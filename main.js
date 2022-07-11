@@ -187,7 +187,7 @@ const app = new Vue({
             
     
             const newMessageState={
-                date:dayjs().format('DD/MM/YYYY hh:mm:ss'),
+                date:dayjs().format('DD/MM hh:mm'),
                 message:this.newMessage.trim(),
                 status: 'sent',
             }
@@ -196,7 +196,7 @@ const app = new Vue({
             
         }
         const newMessageReplay={
-            date:dayjs().format('DD/MM/YYYY hh:mm:ss'),
+            date:dayjs().format('DD/MM hh:mm'),
             message:"ok",
             status:"received",
         }

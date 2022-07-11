@@ -63,6 +63,14 @@
     background-color: rgb(240, 234, 229);
 }
 
+.date-time-text{
+    font-size: 10px;
+}
+
+i{
+    color: gray;
+}
+
 
 .w-40 {
     width: 40%;
