@@ -186,7 +186,7 @@ const app = new Vue({
             
     
             const newMessageState={
-                date:"today",
+                date:dayjs().format('DD/MM/YYYY hh:mm:ss'),
                 message:this.newMessage.trim(),
                 status: 'sent',
             }
@@ -195,7 +195,7 @@ const app = new Vue({
             
         }
         const newMessageReplay={
-            date:"today",
+            date:dayjs().format('DD/MM/YYYY hh:mm:ss'),
             message:"ok",
             status:"received",
         }
@@ -205,6 +205,9 @@ const app = new Vue({
             this.contacts[this.activeUser].messages.push(newMessageReplay)
         },1000);
     },
+
+
+    
 
    
    
