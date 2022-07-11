@@ -59,9 +59,11 @@
                                 <span class="input-group-text border-0" id="search-addon">
                                     <i class="fas fa-search"></i>
                                 </span>
-                                <input type="search" class="form-control rounded"
+                                <input type="text" class="form-control rounded"
                                     placeholder="Cerca o inizia nuova chat" aria-label="Search"
-                                    aria-describedby="search-addon" />
+                                    aria-describedby="search-addon" v-model="search" @keyup="searchList"/>
+                                    
+                                    
 
                             </div>
                         </div>
@@ -69,7 +71,7 @@
                         <div class="col-12 ms-contacts-container">
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item list-group-item-action" v-for="(contact,index) in contacts"
-                                    @click="activeProfile(index)">
+                                    @click="activeProfile(index)" >
                                     <div class="d-flex align-items-center justify-content-between">
                                         <img class="ms-bell" :src="`./img/avatar${contact.avatar}.jpg`" alt="">
                                         <div class="flex-auto">
@@ -77,7 +79,8 @@
                                             <div class="fw-lighter">
                                                 {{contact.messages[contact.messages.length - 1].message}}</div>
                                         </div>
-                                        <div class="fw-lighter">{{contact.messages[contact.messages.length - 1].date}}</div>
+                                        <div class="fw-lighter">{{contact.messages[contact.messages.length - 1].date}}
+                                        </div>
                                     </div>
                                 </li>
                             </ul>
@@ -93,7 +96,9 @@
                                     <img class="ms-bell" :src="`./img/avatar${contacts[activeUser].avatar}.jpg`" alt="">
                                     <div>
                                         <div class="fs-5 fw-semibold">{{contacts[activeUser].name}}</div>
-                                        <div class="fw-lighter">{{contacts[activeUser].messages[contacts[activeUser].messages.length - 1].date}}</div>
+                                        <div class="fw-lighter">
+                                            {{contacts[activeUser].messages[contacts[activeUser].messages.length -
+                                            1].date}}</div>
                                     </div>
                                 </div>
                             </div>
@@ -117,7 +122,8 @@
                         </div>
 
                         <div class="col-12 ms-message-section d-flex align-items-center justify-content-between">
-                            <i class="fa-regular fa-face-smile"></i> <input v-model="newMessage" @keyUp.enter="userNewMessage" class="w-75" type="text"
+                            <i class="fa-regular fa-face-smile"></i> <input v-model="newMessage"
+                                @keyUp.enter="userNewMessage" class="w-75" type="text"
                                 placeholder="Scrivi un messaggio"><i class="fa-solid fa-microphone"></i>
                         </div>
                     </div>
@@ -132,6 +138,10 @@
 
 
     <!-- development version, includes helpful console warnings -->
+    <!-- CDN example (unpkg) -->
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script>dayjs().format()</script>
+
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script type="text/javascript" src="main.js"></script>
 

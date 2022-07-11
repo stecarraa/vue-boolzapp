@@ -8,6 +8,7 @@ const app = new Vue({
   el: "#root",
 
   data: {
+    search:"",
     newMessage:"",
     activeUser: 0,
     contacts: [
@@ -206,8 +207,15 @@ const app = new Vue({
         },1000);
     },
 
-
-    
+    searchList(){
+      this.contacts.forEach((element)=>{
+          if(element.name.toLowerCase().includes(this.search.toLowerCase())){
+              element.visible=true;
+          }else{
+              element.visible=false;
+          }
+      });
+  },
 
    
    
